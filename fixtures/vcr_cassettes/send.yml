@@ -1,0 +1,42 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://lcab.sms-uslugi.ru/lcabApi/sendSms.php?dateTimeSend&discountID&flash=0&idGroup&login=demo&onlydelivery=0&password=demo&source=79021111111&to=81111111111&txt=%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5%20%D1%81%D0%BE%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B5&use_alfasource
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 22 Feb 2014 11:37:20 GMT
+      Content-Type:
+      - text/json; charset:utf-8;
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - PHP/5.5.9
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block;
+    body:
+      encoding: UTF-8
+      string: '{"code":1,"descr":"\u0423\u0441\u043f\u0435\u0448\u043d\u043e \u043e\u0431\u0440\u0430\u0431\u043e\u0442\u0430\u043d\u043e","smsid":"0d46ec94e6ed10c91c66737dbf12e910","colsmsOfSending":1,"priceOfSending":"0.50","colAbonentSend":1}'
+    http_version: 
+  recorded_at: Sat, 22 Feb 2014 11:37:20 GMT
+recorded_with: VCR 2.6.0

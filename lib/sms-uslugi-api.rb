@@ -11,18 +11,37 @@ class SmsUslugiApi
     @api = Faraday.new
   end
 
+  # https://lcab.sms-uslugi.ru/integration/lcabApi#main/Другое/orgInfo
   def info
     api_request("info.php")
   end
 
+  # https://lcab.sms-uslugi.ru/integration/lcabApi#main/pager/send
+  # txt must be in UTF-8 encoding!
+  def send(txt, to, idGroup = nil, source = nil, flash = 0, dateTimeSend = nil, onlydelivery = 0, use_alfasource = nil, discountID = nil)
+    api_request("sendSms.php", {
+      txt: txt,
+      to: to,
+      idGroup: idGroup,
+      source: source,
+      flash: flash,
+      dateTimeSend: dateTimeSend,
+      onlydelivery: onlydelivery,
+      use_alfasource: use_alfasource,
+      discountID: discountID
+    }, :get)
+  end
+
   private
 
-  def api_request(url, method = :get)
+  def api_request(url, options = {}, method = :get)
     url = "#{BASE_API_URL}/#{url}"
+    options[:login] = @username
+    options[:password] = @password
     if method == :post
-      JSON::parse @api.post(url, login: @username, password: @password).body, symbolize_names: true
+      JSON::parse @api.post(url, options).body, symbolize_names: true
     else
-      JSON::parse @api.get(url, login: @username, password: @password).body, symbolize_names: true
+      JSON::parse @api.get(url, options).body, symbolize_names: true
     end
   end
 

@@ -31,4 +31,19 @@ describe SmsUslugiApi do
       end
     end
   end
+
+  describe "sms sending" do
+    it "should send sms" do
+      VCR.use_cassette("send") do
+        status = @sms.send("Тестовое сообщение", "81111111111", nil, "79021111111")
+        expect(status).to include(
+          code: 1,
+          descr: "Успешно обработано",
+          colsmsOfSending: 1,
+          priceOfSending: '0.50'
+        )
+      end
+    end
+  end
+
 end
