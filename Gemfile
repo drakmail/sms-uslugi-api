@@ -14,4 +14,6 @@ group :development do
   gem "jeweler", "~> 2.0.1"
   gem "simplecov", ">= 0"
   gem "rspec"
+  gem "vcr"
+  gem "webmock"
 end
