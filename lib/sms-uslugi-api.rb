@@ -29,20 +29,16 @@ class SmsUslugiApi
       onlydelivery: onlydelivery,
       use_alfasource: use_alfasource,
       discountID: discountID
-    }, :get)
+    })
   end
 
   private
 
-  def api_request(url, options = {}, method = :get)
+  def api_request(url, options = {})
     url = "#{BASE_API_URL}/#{url}"
     options[:login] = @username
     options[:password] = @password
-    if method == :post
-      JSON::parse @api.post(url, options).body, symbolize_names: true
-    else
-      JSON::parse @api.get(url, options).body, symbolize_names: true
-    end
+    JSON::parse @api.get(url, options).body, symbolize_names: true
   end
 
 end
