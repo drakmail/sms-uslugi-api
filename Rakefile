@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "sms-uslugi-api"
   gem.homepage = "http://github.com/drakmail/sms-uslugi-api"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{API for sms-uslugi service}
+  gem.description = %Q{Simple gem for send SMS through sms-uslugi service}
   gem.email = "drakmail@delta.pm"
   gem.authors = ["Alexander Maslov"]
   # dependencies defined in Gemfile
