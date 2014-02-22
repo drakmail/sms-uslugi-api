@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "sms-uslugi-api"
-  s.version = "0.5.1"
+  s.version = "0.6.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alexander Maslov"]
@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
+    "fixtures/vcr_cassettes/getPhoneInfo.yml",
     "fixtures/vcr_cassettes/info.yml",
     "fixtures/vcr_cassettes/send.yml",
     "lib/sms-uslugi-api.rb",
