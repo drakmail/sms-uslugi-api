@@ -40,7 +40,23 @@ describe SmsUslugiApi do
           code: 1,
           descr: "Успешно обработано",
           colsmsOfSending: 1,
-          priceOfSending: '0.50'
+          priceOfSending: "0.50"
+        )
+      end
+    end
+  end
+
+  describe "phone number info" do
+    it "should reveice phone number info" do
+      VCR.use_cassette("getPhoneInfo") do
+        phone_info = @sms.get_phone_info("79000000000")
+        expect(phone_info).to include(
+          code: 1,
+          descr: "Операция завершена успешно",
+          phone: "79000000000",
+          country: "Россия",
+          district: "Краснодарский край",
+          opsos: "Теле 2 (цифровая подпись)"
         )
       end
     end

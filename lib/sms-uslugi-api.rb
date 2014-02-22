@@ -32,6 +32,12 @@ class SmsUslugiApi
     })
   end
 
+  def get_phone_info(phone)
+    api_request("getPhoneInfo.php", {
+      phone: phone
+    })
+  end
+
   private
 
   def api_request(url, options = {})
