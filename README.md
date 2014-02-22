@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/drakmail/sms-uslugi-api.png?branch=master)](https://travis-ci.org/drakmail/sms-uslugi-api)
+
 # sms-uslugi-api
 
 Gem для взаимодействия с API сервиса sms-uslugi.
