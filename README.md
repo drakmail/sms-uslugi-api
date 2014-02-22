@@ -7,6 +7,7 @@ Gem для взаимодействия с API сервиса sms-uslugi.
 ```ruby
 sms = SmsUslugiApi.new 'login', 'password' # инициализация API
 sms.info # получение информации об аккаунте, https://lcab.sms-uslugi.ru/send/smsApi#main/lcabApi/orgInfo
+sms.get_phone_info '79000000000' # получение информации о номере, https://lcab.sms-uslugi.ru/send/smsApi#main/lcabApi/getPhoneInfo
 sms.send 'message in utf8', '81112223333' # отправка SMS получателю, https://lcab.sms-uslugi.ru/send/smsApi#main/lcabApi/send
 ```
 
