@@ -5,6 +5,20 @@
 
 Gem для взаимодействия с API сервиса sms-uslugi.
 
+## Установка
+
+Запустить
+
+```bash
+gem install sms-uslugi-api
+```
+
+или добавить в Gemfile:
+
+```ruby
+gem 'sms-uslugi-api'
+```
+
 ## Использование
 
 ```ruby
