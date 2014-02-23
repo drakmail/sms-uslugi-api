@@ -1,5 +1,6 @@
 [![Build Status](https://travis-ci.org/drakmail/sms-uslugi-api.png?branch=master)](https://travis-ci.org/drakmail/sms-uslugi-api)
 [![Coverage Status](https://coveralls.io/repos/drakmail/sms-uslugi-api/badge.png)](https://coveralls.io/r/drakmail/sms-uslugi-api)
+[![Gem Version](https://badge.fury.io/rb/sms-uslugi-api.png)](http://badge.fury.io/rb/sms-uslugi-api)
 
 # sms-uslugi-api
 
