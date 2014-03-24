@@ -23,7 +23,7 @@ describe SmsUslugiApi do
         expect(info).to include(
           code: 1,
           descr: "Операция завершена успешно",
-          account: "33.00",
+          account: "30.99",
           ocode: "#{settings['source']}",
           tarif: "Аванс::67",
           price: "0.67",
