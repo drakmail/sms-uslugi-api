@@ -20,17 +20,19 @@ class SmsUslugiApi
 
   # https://lcab.sms-uslugi.ru/integration/lcabApi#main/pager/send
   # txt must be in UTF-8 encoding!
-  def send(txt, to, idGroup = nil, source = nil, flash = 0, dateTimeSend = nil, onlydelivery = 0, use_alfasource = nil, discountID = nil)
+  #def send(txt, to, idGroup = nil, source = nil, flash = 0, dateTimeSend = nil, onlydelivery = 0, use_alfasource = nil, discountID = nil)
+  def send(txt, to, options = {})
+    options.default = nil
     api_request("sendSms.php", {
       txt: txt,
       to: to,
-      idGroup: idGroup,
-      source: source,
-      flash: flash,
-      dateTimeSend: dateTimeSend,
-      onlydelivery: onlydelivery,
-      use_alfasource: use_alfasource,
-      discountID: discountID
+      idGroup: options[:idGroup],
+      source: options[:source],
+      flash: options[:flash],
+      dateTimeSend: options[:dateTimeSend],
+      onlydelivery: options[:onlydelivery],
+      use_alfasource: options[:use_alfasource],
+      discountID: options[:discountID]
     })
   end
 

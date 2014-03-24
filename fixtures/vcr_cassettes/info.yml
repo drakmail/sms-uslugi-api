@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://lcab.sms-uslugi.ru/lcabApi/info.php?login=demo&password=demo
+    uri: https://lcab.sms-uslugi.ru/lcabApi/info.php?login=100egeDev&password=6oZ4MLXLiDAPah
     body:
       encoding: US-ASCII
       string: ''
@@ -21,7 +21,7 @@ http_interactions:
       Server:
       - nginx
       Date:
-      - Sat, 22 Feb 2014 11:06:49 GMT
+      - Mon, 24 Mar 2014 15:48:56 GMT
       Content-Type:
       - text/json; charset:utf-8;
       Transfer-Encoding:
@@ -29,7 +29,7 @@ http_interactions:
       Connection:
       - keep-alive
       X-Powered-By:
-      - PHP/5.5.9
+      - PHP/5.5.10
       X-Content-Type-Options:
       - nosniff
       X-Xss-Protection:
@@ -37,7 +37,8 @@ http_interactions:
     body:
       encoding: UTF-8
       string: '{"code":1,"descr":"\u041e\u043f\u0435\u0440\u0430\u0446\u0438\u044f
-        \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0430 \u0443\u0441\u043f\u0435\u0448\u043d\u043e","account":"583.12","ocode":"80009999999","tarif":"\u0410\u0432\u0430\u043d\u0441::50","price":"0.50","source":["systemTest","Ded Moroz"],"receive_numbers":["79029999999","79028888888"],"userAccess":{"canExportContacts":"1","canDeleteGroups":"1","canDeleteContacts":"1","canConfig":"1","canViewReportNums":"1","canViewNumbersInPhonebook":"1","canEditPhonebook":"1","canEditContacts":"1","canUseAllGroups":"1","canModifyContent":"1","canDealerConfig":"1","canTarifConfig":"1","canManageAllOrgs":"1","canReportsCenter":"1","canViewAllReports":"1","canTarifInfo":"1","canChangeTarif":"1","canManageInputNumbers":"1","canManageClientLoginPassword":"1","canSendSMS":"1","canDopModules":"1","canOnline":"1","canMakePayment":"1","canChangeUseAlfaSourceAll":"1","canPm":"1","canOrgList":"1","canDutyAndSkipped":"0","canUseAllSmsTemplates":"1","canPager":"1","canMyFinReports":"1","canDoc":"1"}}'
+        \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043d\u0430 \u0443\u0441\u043f\u0435\u0448\u043d\u043e","account":"33.00","organizationDescr":"\u041f\u0430\u0432\u0435\u043b
+        \u0420\u0435\u043f\u0438\u043d","ocode":"80008878008","tarif":"\u0410\u0432\u0430\u043d\u0441::67","price":"0.67","source":["systemTest"],"receive_numbers":[],"userAccess":{"canExportContacts":"1","canDeleteGroups":"1","canDeleteContacts":"1","canConfig":"1","canViewReportNums":"1","canViewNumbersInPhonebook":"1","canEditPhonebook":"1","canEditContacts":"1","canUseAllGroups":"1","canModifyContent":"1","canDealerConfig":"1","canTarifConfig":"1","canManageAllOrgs":"1","canReportsCenter":"1","canViewAllReports":"1","canTarifInfo":"1","canChangeTarif":"1","canManageInputNumbers":"1","canManageClientLoginPassword":"1","canSendSMS":"1","canDopModules":"1","canOnline":"1","canMakePayment":"1","canChangeUseAlfaSourceAll":"1","canPm":"1","canOrgList":"1","canDutyAndSkipped":"0","canUseAllSmsTemplates":"1","canPager":"1","canMyFinReports":"1","canDoc":"1","canViewNews":"1"}}'
     http_version: 
-  recorded_at: Sat, 22 Feb 2014 11:06:49 GMT
+  recorded_at: Mon, 24 Mar 2014 15:48:54 GMT
 recorded_with: VCR 2.6.0
