@@ -26,9 +26,6 @@ Gem::Specification.new do |s|
     "README.md",
     "Rakefile",
     "VERSION",
-    "fixtures/vcr_cassettes/getPhoneInfo.yml",
-    "fixtures/vcr_cassettes/info.yml",
-    "fixtures/vcr_cassettes/send.yml",
     "lib/sms-uslugi-api.rb",
     "sms-uslugi-api.gemspec",
     "spec/sms_uslugi_api_spec.rb",
@@ -82,4 +79,3 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<coveralls>, [">= 0"])
   end
 end
-
