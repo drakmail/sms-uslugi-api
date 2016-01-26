@@ -26,3 +26,7 @@ pkg
 
 # For vim:
 *.swp
+
+# For privacy:
+spec/settings.yml
+fixtures/vcr_cassettes/*.yml

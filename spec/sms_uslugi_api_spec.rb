@@ -1,9 +1,13 @@
 # encoding: UTF-8
 require "spec_helper"
 
+file_path = File.join(File.expand_path(File.dirname(__FILE__)), 'settings.yml')
+settings = YAML.load_file(file_path)['settings'] if File.file?(file_path)
+settings ||= {}
+
 describe SmsUslugiApi do
   before do
-    @sms = SmsUslugiApi.new("demo", "demo") # Changed in VCR
+    @sms = SmsUslugiApi.new("#{settings['login']}", "#{settings['password']}") # Changed in VCR
   end
 
   describe "minimal functionality" do
@@ -19,14 +23,13 @@ describe SmsUslugiApi do
         expect(info).to include(
           code: 1,
           descr: "Операция завершена успешно",
-          account: "583.12",
-          ocode: "80009999999",
-          tarif: "Аванс::50",
-          price: "0.50",
-          source: ["systemTest", "Ded Moroz"],
+          account: "30.99",
+          ocode: "#{settings['source']}",
+          tarif: "Аванс::67",
+          price: "0.67",
+          source: ["systemTest"],
           receive_numbers: [
-            "79029999999",
-            "79028888888"
+
           ]
         )
       end
@@ -34,14 +37,38 @@ describe SmsUslugiApi do
   end
 
   describe "sms sending" do
-    it "should send sms" do
-      VCR.use_cassette("send") do
-        status = @sms.send("Тестовое сообщение", "81111111111", nil, "79021111111")
+    it "should send sms to me" do
+      VCR.use_cassette("send_me") do
+        status = @sms.send("Тестовое сообщение", "#{settings['phone_me']}", idGroup: nil, source: nil, onlydelivery: '1')
         expect(status).to include(
           code: 1,
           descr: "Успешно обработано",
           colsmsOfSending: 1,
-          priceOfSending: "0.50"
+          priceOfSending: "0.67"
+        )
+      end
+    end
+
+    it "should send sms to nw" do
+      VCR.use_cassette("send_nw") do
+        status = @sms.send("Тестовое сообщение", "#{settings['phone_nw']}", idGroup: nil, source: nil, onlydelivery: '1')
+        expect(status).to include(
+          code: 1,
+          descr: "Успешно обработано",
+          colsmsOfSending: 1,
+          priceOfSending: "0.67"
+        )
+      end
+    end
+
+    it "should send sms to pr" do
+      VCR.use_cassette("send_pr") do
+        status = @sms.send("Тестовое сообщение", "#{settings['phone_pr']}", idGroup: nil, source: nil, onlydelivery: '1')
+        expect(status).to include(
+          code: 1,
+          descr: "Успешно обработано",
+          colsmsOfSending: 1,
+          priceOfSending: "0.67"
         )
       end
     end
@@ -50,14 +77,14 @@ describe SmsUslugiApi do
   describe "phone number info" do
     it "should reveice phone number info" do
       VCR.use_cassette("getPhoneInfo") do
-        phone_info = @sms.get_phone_info("79000000000")
+        phone_info = @sms.get_phone_info("#{settings['phone_me']}")
         expect(phone_info).to include(
           code: 1,
           descr: "Операция завершена успешно",
-          phone: "79000000000",
+          phone: "#{settings['phone_me']}",
           country: "Россия",
-          district: "Краснодарский край",
-          opsos: "Теле 2 (цифровая подпись)"
+          district: "#{settings['my_region']}",
+          opsos: "#{settings['my_operator']} (цифровая подпись)"
         )
       end
     end
