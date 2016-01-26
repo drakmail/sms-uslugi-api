@@ -52,7 +52,17 @@ sms.send 'message in utf8', '81112223333' # отправка SMS получат�
 }
 ```
 
-### send(txt, to, idGroup = nil, source = nil, flash = 0, dateTimeSend = nil, onlydelivery = 0, use_alfasource = nil, discountID = nil)
+### send(txt, to, options)
+
+`options` может содержать следующие параметры:
+
+* idGroup
+* source
+* flash
+* dateTimeSend
+* onlydelivery
+* use_alfasource
+* discountID
 
 Отправляет SMS с текстом `txt` (должен быть в кодировке utf8) на номер `to`. Остальные параметры идентичны аналогичным из официальной документации: https://lcab.sms-uslugi.ru/send/smsApi#main/lcabApi/send
 
@@ -92,10 +102,10 @@ PS. При смене информации для авторизации все 
 Для того, чтобы использовать своё имя отправителя, требуется сначала зарегистрировать его в личном кабинете и дождаться подтверждения, после чего высылать СМС с использованием прямого канала:
 
 ```ruby
-@sms.send("teset message", PHONE_NUMBER, nil, SOURCE, 0, nil, 0, 1)
+@sms.send("teset message", PHONE_NUMBER, source: SOURCE, use_alfasource: 1)
 # важен последний параметр (1), он отвечает за использование прямого канала
 ```
 
 ## Copyright
 
-Copyright (c) 2014-2015 Alexander Maslov. See LICENSE.txt for further details.
+Copyright (c) 2014-2016 Alexander Maslov, Oleg Bobok. See LICENSE.txt for further details.
