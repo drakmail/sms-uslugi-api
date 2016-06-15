@@ -5,13 +5,13 @@
 
 Gem::Specification.new do |s|
   s.name = "sms-uslugi-api"
-  s.version = "0.6.2"
+  s.version = "0.7.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Alexander Maslov"]
-  s.date = "2014-02-23"
+  s.date = "2016-06-15"
   s.description = "Simple gem for send SMS through sms-uslugi service"
-  s.email = "drakmail@delta.pm"
+  s.email = "drakmail@gmail.com"
   s.extra_rdoc_files = [
     "LICENSE.txt",
     "README.md"
