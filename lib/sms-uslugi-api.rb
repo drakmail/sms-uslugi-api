@@ -32,7 +32,8 @@ class SmsUslugiApi
       dateTimeSend: options[:dateTimeSend],
       onlydelivery: options[:onlydelivery],
       use_alfasource: options[:use_alfasource],
-      discountID: options[:discountID]
+      discountID: options[:discountID],
+      channel: options[:channel]
     })
   end
 
